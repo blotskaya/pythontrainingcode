@@ -6,7 +6,12 @@
 #Input: 15 Output: '101.25 Chinese Yuan';
 #Input: 465 Output: '3138.75 Chinese Yuan';
 
-def usdcny():
-    pass
+def usdcny(usd):
+    cny = usd*7.75
+    print(f"{cny:.2f} Chinese Yuan")
 
+assert usdcny(15) == "116.25 Chinese Yuan"
+assert usdcny(465) == "3603.75 Chinese Yuan"
+assert usdcny(0) == "0.00 Chinese Yuan"
 
+#но ассерты не срабатывают, пока не знаю, почему

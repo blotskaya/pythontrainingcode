@@ -4,5 +4,13 @@
 #Input: 1 Output: -1
 #Input: -5 Output: -5
 
-def make_negative():
-    pass
+def make_negative(num):
+    if num > 0:
+        return num*(-1)
+    else:
+        return num
+
+assert make_negative(4) == -4
+assert make_negative(-77) == -77
+assert make_negative(0) == 0
+assert make_negative(7.5) == -7.5

@@ -7,7 +7,12 @@
 #Input: [1, 2, 3] Output: [2, 4, 6]
 #Input: [4, 6, 9, 1, 3] Output: [5, 8, 2, 5, 8]
 
-def incrementer():
-    pass
+def incrementer(numlist):
+    incrementer_list = [(i + numlist.index(i) + 1) % 10 for i in numlist]
+    return incrementer_list
 
+assert incrementer([4, 6, 9, 1, 3]) == [5, 8, 2, 5, 8]
+assert incrementer([1, 2, 3]) == [2, 4, 6]
+assert incrementer([10, 100, 2000]) == [1, 2, 3]
+assert incrementer([-1, -2, -3]) == [0, 0, 0]
 

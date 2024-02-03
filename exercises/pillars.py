@@ -11,6 +11,23 @@
 #Input: (2, 20, 25) Output: 2000;
 #Input: (1, 10, 10) Output: 0;
 
-def pillars():
-    pass
+def pillars(count, s, width):
+    if count < 1 or s < 10 or s > 30 or width < 10 or width > 50:
+        return "Invalid data"
+    else:
+        if count < 3:
+            way_s = s*100*(count-1)
+        else:
+            way_s = s*100*(count-1) - width*(count-2)
+    return(way_s)
+
+assert pillars(1, 10, 10) == 0 #минимальные валидные данные
+assert pillars(2, 20, 25) == 2000 #валидные данные
+assert pillars(4, 30, 50) == 8900 #максимальные валидные данные, кроме кол-ва столбов (нет данных о макс кол-ве столбов)
+assert pillars(0, 30, 40) == "Invalid data" #невалидное кол-во столбов
+assert pillars(2, 31, 40) == "Invalid data" #граничное значение расстояния между столбами
+assert pillars(2, 30, 51) == "Invalid data" #граничное значение ширины столба
+assert pillars(2, 29.9, 49.5) == 2990.0 #не целые числа
+
+
 

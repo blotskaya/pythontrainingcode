@@ -4,6 +4,12 @@
 #Input: (1, 4) Output: [1,2,3,4]
 #Input: (-2,2) Output: [-2,-1,0,1,2]
 
-def between():
-    pass
+def between(num1, num2):
+    between_nums = [i for i in range(num1, num2+1)]
+    return between_nums
+
+assert between(1, 4) == [1,2,3,4]
+assert between(-2, 2) == [-2,-1,0,1,2]
+
+#не знаю, что еще придумать по проверкам, четко сказано в условии, что два integer, точно первое число меньше второго
 
