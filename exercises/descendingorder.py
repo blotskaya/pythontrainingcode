@@ -12,8 +12,11 @@ def descending_order(num: int) -> int:
                 strnum[i], strnum[i+1] = strnum[i+1], strnum[i]
     return int(''.join(strnum))
 
-
-assert descending_order(145263) == 654321 #числа не упорядочены
-assert descending_order(98765) == 98765 #числа уже упорядочены по убыванию
-assert descending_order(12345) == 54321 #числа упорядочены по возрастанию
-assert descending_order(555) == 555 #числа дублируются
+#числа не упорядочены
+assert descending_order(145263) == 654321, f"Expected: 654321, got: {descending_order(145263)}"
+#числа уже упорядочены по убыванию
+assert descending_order(98765) == 98765, f"Expected: 98765, got: {descending_order(98765)}"
+#числа упорядочены по возрастанию
+assert descending_order(12345) == 54321, f"Expected: 54321, got: {descending_order(12345)}"
+#числа дублируются
+assert descending_order(555) == 555, f"Expected: 555, got: {descending_order(555)}"

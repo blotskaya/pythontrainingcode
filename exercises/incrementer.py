@@ -13,8 +13,12 @@ def incrementer(numlist: List[int]) -> List[int]:
     incrementer_list = [(i + numlist.index(i) + 1) % 10 for i in numlist]
     return incrementer_list
 
-assert incrementer([4, 6, 9, 1, 3]) == [5, 8, 2, 5, 8] #есть числа, которые при сложении с индексом вернут 2-значное число
-assert incrementer([1, 2, 3]) == [2, 4, 6] #все числа вернут однозначное число при сложении с индексом
-assert incrementer([10, 100, 2000]) == [1, 2, 3] #числа больше, чем 2-значные
-assert incrementer([-1, -2, -3]) == [0, 0, 0] #отрицательные числа
+#есть числа, которые при сложении с индексом вернут 2-значное число
+assert incrementer([4, 6, 9, 1, 3]) == [5, 8, 2, 5, 8], f"Expected: [5, 8, 2, 5, 8], got: {incrementer([4, 6, 9, 1, 3])}"
+#все числа вернут однозначное число при сложении с индексом
+assert incrementer([1, 2, 3]) == [2, 4, 6], f"Expected: [2, 4, 6], got: {incrementer([1, 2, 3])}"
+#числа больше, чем 2-значные
+assert incrementer([10, 100, 2000]) == [1, 2, 3], f"Expected: [1, 2, 3], got: {incrementer([10, 100, 2000])}"
+#отрицательные числа
+assert incrementer([-1, -2, -3]) == [0, 0, 0], f"Expected: [0, 0, 0], got: {incrementer([-1, -2, -3])}"
 

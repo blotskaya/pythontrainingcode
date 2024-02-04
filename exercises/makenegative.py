@@ -12,7 +12,11 @@ def make_negative(num: Union[int, float]) -> Union[int, float]:
     else:
         return num
 
-assert make_negative(4) == -4 #положительное число
-assert make_negative(-77) == -77 #отрицательное число
-assert make_negative(0) == 0 #ноль
-assert make_negative(7.5) == -7.5 #число с плавающей точкой
+#положительное число - преобразовано в отрицательное
+assert make_negative(4) == -4, f"Expected: -4, got: {make_negative(4)}"
+#отрицательное число - без изменений
+assert make_negative(-77) == -77, f"Expected: -77, got: {make_negative(-77)}"
+#ноль - без изменений
+assert make_negative(0) == 0, f"Expected: 0, got: {make_negative(0)}"
+#положительное число с плавающей точкой - преобразовано в отрицательное
+assert make_negative(7.5) == -7.5, f"Expected: -7.5, got: {make_negative(7.5)}"

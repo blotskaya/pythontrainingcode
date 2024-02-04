@@ -9,6 +9,9 @@ def filter_list(list_: List[Union[str, int]]) -> List[int]:
     return [i for i in list_ if type(i)==int]
 
 
-assert filter_list([1,2,'a','b']) == [1,2] #числа и строки
-assert filter_list(['aasf','1','123','abc']) == [] #только строки
-assert filter_list([1, 2, 3]) == [1, 2, 3] #только числа
+#числа и строки
+assert filter_list([1,2,'a','b']) == [1,2], f"Expected: [1, 2], got: {filter_list([1,2,'a','b'])}"
+#только строки
+assert filter_list(['aasf','1','123','abc']) == [], f"Expected: [], got: {filter_list(['aasf','1','123','abc'])}"
+#только числа
+assert filter_list([1, 2, 3]) == [1, 2, 3] , f"Expected: [], got: {filter_list([1, 2, 3])}"

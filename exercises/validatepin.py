@@ -11,11 +11,19 @@ def validatepin(pin: str) -> bool:
         return True
     else:
         return False
-assert validatepin("a235") == False #буква в строке
-assert validatepin("1234") == True #4 цифры
-assert validatepin("") == False #пустая строка
-assert validatepin("556677") == True #6 цифр
-assert validatepin("12&7") == False #спец символ в строке
-assert validatepin("5566778") == False #цифр больше
-assert validatepin("678") == False #цифр меньше
+
+#буква в строке
+assert validatepin("a235") == False, f"Expected: False, got: {validatepin('a235')}"
+#4 цифры
+assert validatepin("1234") == True, f"Expected: True, got: {validatepin('1234')}"
+#пустая строка
+assert validatepin("") == False, f"Expected: False, got: {validatepin('')}"
+#6 цифр
+assert validatepin("556677") == True, f"Expected: True, got: {validatepin('556677')}"
+#спец символ в строке
+assert validatepin("12&7") == False, f"Expected: False, got: {validatepin('12&7')}"
+#цифр больше
+assert validatepin("5566778") == False, f"Expected: False, got: {validatepin('5566778')}"
+#цифр меньше
+assert validatepin("678") == False, f"Expected: False, got: {validatepin('678')}"
 
