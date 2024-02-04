@@ -6,7 +6,8 @@
 from typing import List, Union
 
 def filter_list(list_: List[Union[str, int]]) -> List[int]:
-    """Решение с помощью list comprehention и type"""
+    """Решение с помощью list comprehention и type
+    алгоритмическая сложность O(len(list_))"""
     return [i for i in list_ if type(i)==int]
 
 
@@ -18,7 +19,8 @@ assert filter_list(['aasf','1','123','abc']) == [], f"Expected: [], got: {filter
 assert filter_list([1, 2, 3]) == [1, 2, 3] , f"Expected: [], got: {filter_list([1, 2, 3])}"
 
 def filter_list_2(list_: List[Union[str, int]]) -> List[int]:
-    """Решение с помощью фп и isinstance"""
+    """Решение с помощью фп и isinstance
+    алгоритмическая сложность O(len(list_))"""
     num_list = list(filter(lambda num: isinstance(num, int), list_))
     return num_list
 

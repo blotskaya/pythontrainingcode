@@ -7,7 +7,8 @@
 from typing import Union, List
 
 def make_negative(num: Union[int, float]) -> Union[int, float]:
-    """Решение для задачки, когда подается 1 число"""
+    """Решение для задачки, когда подается 1 число
+    алгоритмическая сложность O(1) + O(1)"""
     if num > 0:
         return num*(-1)
     else:
@@ -25,10 +26,12 @@ assert make_negative(7.5) == -7.5, f"Expected: -7.5, got: {make_negative(7.5)}"
 #Усложнение задачки, на вход список чисел
 
 def make_negative_list_1(nums: List[Union[int, float]]) -> List[Union[int, float]]:
-    """Решение для задачки, когда подается список чисел с помощью list comprehension"""
+    """Решение для задачки, когда подается список чисел с помощью list comprehension
+    алгоритмическая сложность O(len(nums))"""
     return [num*(-1) if num > 0 else num for num in nums]
 
 def make_negative_list_2(nums: List[Union[int, float]]) -> List[Union[int, float]]:
-    """Решение для задачки, когда подается список чисел с помощью фп"""
+    """Решение для задачки, когда подается список чисел с помощью фп
+    алгоритмическая сложность O(len(nums)) + O(1)"""
     new_list = list(map(lambda num: num*(-1) if num > 0 else num, nums))
     return new_list
