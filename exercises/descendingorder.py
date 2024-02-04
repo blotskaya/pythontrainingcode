@@ -13,6 +13,7 @@ def descending_order(num):
     return int(''.join(strnum))
 
 
-assert descending_order(145263) == 654321
-assert descending_order(98765) == 98765
-assert descending_order(12345) == 54321
+assert descending_order(145263) == 654321 #числа не упорядочены
+assert descending_order(98765) == 98765 #числа уже упорядочены по убыванию
+assert descending_order(12345) == 54321 #числа упорядочены по возрастанию
+assert descending_order(555) == 555 #числа дублируются

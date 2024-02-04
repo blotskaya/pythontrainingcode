@@ -10,7 +10,7 @@ def make_negative(num):
     else:
         return num
 
-assert make_negative(4) == -4
-assert make_negative(-77) == -77
-assert make_negative(0) == 0
-assert make_negative(7.5) == -7.5
+assert make_negative(4) == -4 #положительное число
+assert make_negative(-77) == -77 #отрицательное число
+assert make_negative(0) == 0 #ноль
+assert make_negative(7.5) == -7.5 #число с плавающей точкой
