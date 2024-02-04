@@ -5,6 +5,7 @@
 #Input: 123456789 Output: 987654321
 
 def descending_order(num: int) -> int:
+    """Решение задачки с помощью пузырьковой сортировки"""
     strnum = list(str(num))
     for i in range(len(strnum)):
         for i in range(len(strnum)-1):
@@ -20,3 +21,10 @@ assert descending_order(98765) == 98765, f"Expected: 98765, got: {descending_ord
 assert descending_order(12345) == 54321, f"Expected: 54321, got: {descending_order(12345)}"
 #числа дублируются
 assert descending_order(555) == 555, f"Expected: 555, got: {descending_order(555)}"
+
+def descending_order_2(num: int) -> int:
+    """Решение задачки с помощью встроенных методов"""
+    strnum = list(str(num))
+    strnum.sort(reverse=True)
+    sorted_nums = int(''.join(strnum))
+    return sorted_nums
