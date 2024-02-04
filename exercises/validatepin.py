@@ -6,7 +6,7 @@
 #Input: 1234 Output: true
 #Input: a234 Output: false
 
-def validatepin(pin):
+def validatepin(pin: str) -> bool:
     if 4 <= len(pin) <= 6 and pin.isnumeric():
         return True
     else:

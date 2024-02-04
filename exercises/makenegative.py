@@ -4,7 +4,9 @@
 #Input: 1 Output: -1
 #Input: -5 Output: -5
 
-def make_negative(num):
+from typing import Union
+
+def make_negative(num: Union[int, float]) -> Union[int, float]:
     if num > 0:
         return num*(-1)
     else:

@@ -4,7 +4,7 @@
 #Input: 145263 Output: 654321
 #Input: 123456789 Output: 987654321
 
-def descending_order(num):
+def descending_order(num: int) -> int:
     strnum = list(str(num))
     for i in range(len(strnum)):
         for i in range(len(strnum)-1):

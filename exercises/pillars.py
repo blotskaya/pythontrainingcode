@@ -11,7 +11,9 @@
 #Input: (2, 20, 25) Output: 2000;
 #Input: (1, 10, 10) Output: 0;
 
-def pillars(count, s, width):
+from typing import Union
+
+def pillars(count: int, s: Union[int, float], width: Union[int, float]) -> Union[int, float]:
     if count < 1 or s < 10 or s > 30 or width < 10 or width > 50:
         return "Invalid data"
     else:

@@ -3,7 +3,7 @@
 #Input: "camelCasing" Output: "camel Casing"
 #Input: "identifier" Output: "identifier"
 
-def camel_casing(string_):
+def camel_casing(string_: str) -> str:
     new_string = (''.join([" "+letter if letter.isupper() else letter for letter in string_])).rstrip().lstrip()
     return new_string
 

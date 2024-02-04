@@ -4,7 +4,9 @@
 #Input: (1, 4) Output: [1,2,3,4]
 #Input: (-2,2) Output: [-2,-1,0,1,2]
 
-def between(num1, num2):
+from typing import List
+
+def between(num1: int, num2: int) -> List[int]:
     between_nums = [i for i in range(num1, num2+1)]
     return between_nums
 

@@ -3,7 +3,9 @@
 #Input: [1,2,'a','b'] Output: [1,2];
 #Input: [1,2,'aasf','1','123',123] Output: [1,2,123];
 
-def filter_list(list_):
+from typing import List, Union
+
+def filter_list(list_: List[Union[str, int]]) -> List[int]:
     return [i for i in list_ if type(i)==int]
 
 

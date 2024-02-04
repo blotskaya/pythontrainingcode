@@ -7,7 +7,9 @@
 #Input: [1, 2, 3] Output: [2, 4, 6]
 #Input: [4, 6, 9, 1, 3] Output: [5, 8, 2, 5, 8]
 
-def incrementer(numlist):
+from typing import List
+
+def incrementer(numlist: List[int]) -> List[int]:
     incrementer_list = [(i + numlist.index(i) + 1) % 10 for i in numlist]
     return incrementer_list
 

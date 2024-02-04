@@ -4,7 +4,7 @@
 #Input: 1, 9 Output: 8
 #Input: 4, 17 Output: 12
 
-def dontgivemefive(num1, num2):
+def dontgivemefive(num1: int, num2: int) -> int:
     num_list = [num for num in range(num1, num2+1) if '5' not in str(num)]
     return len(num_list)
 
