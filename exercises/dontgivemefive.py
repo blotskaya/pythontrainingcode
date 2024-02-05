@@ -7,7 +7,7 @@
 def dontgivemefive(num1: int, num2: int) -> int:
     if type(num1) != int or type(num2) != int:
         return "num1 and num2 should be integer"
-    elif num1 > num2:
+    elif num1 > num2 or num1==num2:
         return "num1 should be less than num2"
     else:
         num_list = [num for num in range(num1, num2+1) if '5' not in str(num)]
@@ -30,3 +30,7 @@ assert dontgivemefive(1.77, 11) == "num1 and num2 should be integer", f"Expected
 #второе число не целое
 assert dontgivemefive(5, "ten") == "num1 and num2 should be integer", f"Expected: num1 and num2 should be integer, " \
                                                                  f"got: {dontgivemefive(5, 'ten')}"
+#числа равны друг другу
+assert dontgivemefive(5, 5) == "num1 should be less than num2", f"Expected: num1 should be less than num2, " \
+                                                                 f"got: {dontgivemefive(5, 'ten')}"
+

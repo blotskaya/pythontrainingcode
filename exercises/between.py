@@ -9,7 +9,7 @@ from typing import List
 def between(num1: int, num2: int) -> List[int]:
     if not isinstance(num1, int) or not isinstance(num2, int):
         return "num1 and num2 should be integers"
-    elif num1 > num2:
+    elif num1 > num2 or num1==num2:
         return "num1 should be less than num2"
     else:
         between_nums = [i for i in range(num1, num2+1)]
@@ -34,5 +34,8 @@ assert between(1.5, 5) == "num1 and num2 should be integers", f"Expected: num1 a
 #одно из чисел не является integer, а float
 assert between(1, 5.25) == "num1 and num2 should be integers", f"Expected: num1 and num2 should be " \
                                                                          f"integers, got: {between(1, 5.25)}"
+#числа равны друг другу
+assert between(1, 1) == "num1 should be less than num2", f"Expected: num1 should be less than num2" \
+                                                         f", got: {between(1, 1)}"
 
 
