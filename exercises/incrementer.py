@@ -10,8 +10,12 @@
 from typing import List
 
 def incrementer(numlist: List[int]) -> List[int]:
-    incrementer_list = [(i + numlist.index(i) + 1) % 10 for i in numlist]
-    return incrementer_list
+    if type(numlist) != list:
+        return "numlist should be list"
+    else:
+        filtered_numlist = list(filter(lambda x: type(x) == int, numlist))
+        incrementer_list = [(i + filtered_numlist.index(i) + 1) % 10 for i in filtered_numlist]
+        return incrementer_list
 
 #есть числа, которые при сложении с индексом вернут 2-значное число
 assert incrementer([4, 6, 9, 1, 3]) == [5, 8, 2, 5, 8], f"Expected: [5, 8, 2, 5, 8], got: {incrementer([4, 6, 9, 1, 3])}"
@@ -21,4 +25,14 @@ assert incrementer([1, 2, 3]) == [2, 4, 6], f"Expected: [2, 4, 6], got: {increme
 assert incrementer([10, 100, 2000]) == [1, 2, 3], f"Expected: [1, 2, 3], got: {incrementer([10, 100, 2000])}"
 #отрицательные числа
 assert incrementer([-1, -2, -3]) == [0, 0, 0], f"Expected: [0, 0, 0], got: {incrementer([-1, -2, -3])}"
-
+#пустой список
+assert incrementer([]) == [], f"Expected: [], got: {incrementer([])}"
+#не список
+assert incrementer({1, 2, 3}) == "numlist should be list", f"Expected: numlist should be list, " \
+                                                           f"got: {incrementer({1, 2, 3})}"
+#не все числа целые - список отфильтровывается до целых чисел, а затем увеличивает их на индексы + 1
+assert incrementer([1, '2', 3, 3.5]) == [2, 5], f"Expected: [2, 5], got: {incrementer([1, '2', 3, 3.5])}"
+#одно число
+assert incrementer([1]) == [2], f"Expected: [2], got: {incrementer([1])}"
+#в списке одно значение, не являющееся целым число - возвращается пустой список
+assert incrementer(['1']) == [], f"Expected: [], got: {incrementer(['1'])}"

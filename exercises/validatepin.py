@@ -7,10 +7,13 @@
 #Input: a234 Output: false
 
 def validatepin(pin: str) -> bool:
-    if 4 <= len(pin) <= 6 and pin.isnumeric():
-        return True
+    if type(pin) != str:
+        return "pin should be string"
     else:
-        return False
+        if 4 <= len(pin) <= 6 and pin.isnumeric():
+            return True
+        else:
+            return False
 
 #буква в строке
 assert validatepin("a235") == False, f"Expected: False, got: {validatepin('a235')}"
@@ -26,4 +29,5 @@ assert validatepin("12&7") == False, f"Expected: False, got: {validatepin('12&7'
 assert validatepin("5566778") == False, f"Expected: False, got: {validatepin('5566778')}"
 #цифр меньше
 assert validatepin("678") == False, f"Expected: False, got: {validatepin('678')}"
-
+#не число
+assert validatepin(678) == "pin should be string", f"Expected: pin should be string, got: {validatepin(678)}"
